@@ -2,11 +2,15 @@ import SharedAoC
 
 public class y2024 {
 
-    private static let _days: [Day.Type] = [Day01.self]
+    private static let _days: [Day.Type] = [Day01.self, Day02.self]
 
     public static func runDay(day: Int) -> (CodeResult<Int>, CodeResult<Int>) {
         if day > 25 || day < 1 {
             return (.Error(string: "Day must be between 1 and 25"), .Error(string: "Day must be between 1 and 25"))
+        }
+
+        if day > _days.count {
+            return (.Error(string: "Day not implemented"), .Error(string: "Day not implemented"))
         }
 
         let inputResult = Network.downloadInput(year: 2024, day: day)
