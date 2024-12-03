@@ -2,7 +2,7 @@ import SharedAoC
 
 public class y2024 {
 
-    private static let _days: [Day.Type] = [Day01.self, Day02.self]
+    private static let _days: [Day.Type] = [Day01.self, Day02.self, Day03.self]
 
     public static func runDay(day: Int) -> (CodeResult<Int>, CodeResult<Int>) {
         if day > 25 || day < 1 {
@@ -22,7 +22,7 @@ public class y2024 {
             case .Error(_):
                 return (.forward(inputResult), .forward(inputResult))
         }
-
+        
         let dayType = _days[day - 1]
 
         let instance = dayType.init(input: input)
