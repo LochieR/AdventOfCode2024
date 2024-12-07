@@ -3,7 +3,7 @@ import Foundation
 
 public class y2024 {
 
-    private static let _days: [Day.Type] = [Day01.self, Day02.self, Day03.self, Day04.self, Day05.self, Day06.self]
+    private static let _days: [Day.Type] = [Day01.self, Day02.self, Day03.self, Day04.self, Day05.self, Day06.self, Day07.self]
 
     public static func runDay(day: Int) -> (CodeResult<Int>, Double, CodeResult<Int>, Double) {
         if day > 25 || day < 1 {

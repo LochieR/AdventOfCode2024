@@ -1,6 +1,6 @@
 import y2024
 
-let (resultP1, timeElapsed1, resultP2, timeElapsed2) = y2024.runDay(day: 6)
+let (resultP1, timeElapsed1, resultP2, timeElapsed2) = y2024.runDay(day: 7)
 
 switch resultP1 {
     case .Success(let result):
