@@ -9,7 +9,7 @@ public enum CodeResult<TResult> {
             case .Success(let result):
                 return .Error(string: "Improperly handled result (tried to forward a successful result)")
             case .Error(let error):
-                return .Error(string: "Network error: \(error)")
+                return .Error(string: "Network error. \(error)")
         }
     }
 }

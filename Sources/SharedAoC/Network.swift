@@ -31,16 +31,19 @@ public class Network {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 sessionResult = .Error(string: error.localizedDescription)
+                semaphore.signal()
                 return
             }
 
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 sessionResult = .Error(string: "Server error or invalid response")
+                semaphore.signal()
                 return
             }
 
             guard let data = data else {
                 sessionResult = .Error(string: "No data received from response")
+                semaphore.signal()
                 return
             }
 
@@ -48,6 +51,7 @@ public class Network {
 
             if result.isEmpty {
                 sessionResult = .Error(string: "Empty result")
+                semaphore.signal()
                 return
             }
 
