@@ -56,7 +56,7 @@ public final class Day06: Day {
                 return
             }
 
-            print("\(index)/\(_visitedPositions.count) on thread \(Thread.current)")
+            //print("\(index)/\(_visitedPositions.count) on thread \(Thread.current)")
 
             var direction: Direction = .Up
             var running = true
